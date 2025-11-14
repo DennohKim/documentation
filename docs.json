@@ -1,48 +1,49 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Cradle Developer Hub",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#FF3332",
+    "light": "#FF8A89",
+    "dark": "#CC1918"
   },
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Overview",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Welcome",
             "pages": [
               "index",
               "quickstart",
               "development"
             ]
-          },
+          }
+        ]
+      },
+      {
+        "tab": "Contracts",
+        "groups": [
           {
-            "group": "Customization",
+            "group": "Protocol design",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "contracts/overview"
             ]
-          },
+          }
+        ]
+      },
+      {
+        "tab": "Build with Cradle",
+        "groups": [
           {
-            "group": "Writing content",
+            "group": "Guides",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "guides/authentication",
+              "guides/accounts-wallets",
+              "guides/markets-trading",
+              "guides/lending"
             ]
           }
         ]
@@ -51,53 +52,44 @@
         "tab": "API reference",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "Overview",
             "pages": [
               "api-reference/introduction"
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "Resources",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "api-reference/accounts",
+              "api-reference/assets",
+              "api-reference/orders",
+              "api-reference/time-series",
+              "api-reference/lending",
+              "api-reference/mutations"
             ]
           }
         ]
       }
     ],
     "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
+      "anchors": []
     }
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/cradle_logo.svg",
+    "dark": "/logo/cradle_logo.svg"
   },
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "label": "Homepage",
+        "href": "https://www.cradleprotocol.com/"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Trade",
+      "href": "https://www.cradleprotocol.com/trade"
     }
   },
   "contextual": {
@@ -114,9 +106,9 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/CradleProtocol",
+      "github": "https://github.com/cradle-labs",
+      "linkedin": "https://www.linkedin.com/in/cradle-protocol-01a022399/"
     }
   }
 }

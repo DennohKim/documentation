@@ -1,97 +1,104 @@
 ---
-title: "Introduction"
-description: "Welcome to the new home for your documentation"
+title: "Cradle overview"
+description: "Understand the Cradle platform and the resources available to you."
 ---
 
-## Setting up
+## Why Cradle
 
-Get your documentation site up and running in minutes.
+Cradle is a programmable finance platform for institutions that need to orchestrate accounts, assets, markets, and credit experiences on Hedera. The TypeScript SDK gives you fully typed access to every REST capability, including read models, liquidity operations, and mutation workflows.
 
-<Card
-  title="Start here"
-  icon="rocket"
-  href="/quickstart"
-  horizontal
->
-  Follow our three step quickstart guide.
-</Card>
+<Columns cols={3}>
+  <Card
+    title="Typed by default"
+    icon="code"
+  >
+    Generated interfaces for every resource keep your codebase type-safe from request to response.
+  </Card>
+  <Card
+    title="Operations ready"
+    icon="shield-check"
+  >
+    Built-in retries, timeouts, and opinionated error handling make it safe to wire into production flows.
+  </Card>
+  <Card
+    title="Complete surface area"
+    icon="layers"
+  >
+    40+ endpoints covering accounts, wallets, markets, orders, time series data, and lending pools.
+  </Card>
+</Columns>
 
-## Make it yours
+## What you can build
 
-Design a docs site that looks great and empowers your users.
+- Embedded onboarding with automated wallet provisioning
+- Asset issuance, discovery, and vaulting
+- Market creation and order handling (spot, derivatives, OTC)
+- Time series analytics for pricing and risk
+- Institutional lending pools with configurable underwriting
+
+## Start building in minutes
+
+<Steps>
+  <Step title="Install the SDK">
+    Add `cradle-api-client` to any Node.js or browser runtime. Follow the <Link href="/quickstart">quickstart</Link> to copy the install snippet.
+  </Step>
+  <Step title="Configure access">
+    Generate an API key in the Cradle Console, store it as an environment variable, and initialize `CradleApiClient`.
+  </Step>
+  <Step title="Ship your flow">
+    Use the guides under <Link href="/guides/authentication">Build with Cradle</Link> to connect accounts, trade, or manage liquidity.
+  </Step>
+</Steps>
+
+## SDK at a glance
+
+```ts
+import { CradleApiClient } from 'cradle-api-client';
+
+const client = new CradleApiClient({
+  baseUrl: 'https://api.cradle.example.com',
+  apiKey: process.env.CRADLE_API_KEY!,
+  timeout: 30000,
+});
+
+const health = await client.health();
+const pools = await client.getLendingPools();
+```
+
+<Note>
+  All SDK methods resolve to a shared `ApiResponse<T>` envelope. Always check `success`
+  before reading `data`, and fall back to `error` for surfaced failure reasons.
+</Note>
+
+## Explore the docs
 
 <Columns cols={2}>
   <Card
-    title="Edit locally"
-    icon="pen-to-square"
-    href="/development"
+    title="Quickstart"
+    icon="rocket-launch"
+    href="/quickstart"
   >
-    Edit your docs locally and preview them in real time.
+    From install to your first health check in three commands.
   </Card>
   <Card
-    title="Customize your site"
-    icon="palette"
-    href="/essentials/settings"
+    title="Authentication"
+    icon="key"
+    href="/guides/authentication"
   >
-    Customize the design and colors of your site to match your brand.
-  </Card>
-    <Card
-    title="Set up navigation"
-    icon="map"
-    href="/essentials/navigation"
-  >
-    Organize your docs to help users find what they need and succeed with your product.
+    Learn how to manage API keys, rotate credentials, and scope requests.
   </Card>
   <Card
-    title="API documentation"
-    icon="terminal"
+    title="Markets & orders"
+    icon="chart-bar"
+    href="/guides/markets-trading"
+  >
+    Stand up a marketplace, stream quotes, and manage order lifecycles.
+  </Card>
+  <Card
+    title="API reference"
+    icon="book-open"
     href="/api-reference/introduction"
   >
-    Auto-generate API documentation from OpenAPI specifications.
+    Browse every method on `CradleApiClient`, grouped by resource.
   </Card>
 </Columns>
-
-## Create beautiful pages
-
-Everything you need to create world-class documentation.
-
-<Columns cols={2}>
-  <Card
-    title="Write with MDX"
-    icon="pen-fancy"
-    href="/essentials/markdown"
-  >
-    Use MDX to style your docs pages.
-  </Card>
-  <Card
-    title="Code samples"
-    icon="code"
-    href="/essentials/code"
-  >
-    Add sample code to demonstrate how to use your product.
-  </Card>
-  <Card
-    title="Images"
-    icon="image"
-    href="/essentials/images"
-  >
-    Display images and other media.
-  </Card>
-  <Card
-    title="Reusable snippets"
-    icon="recycle"
-    href="/essentials/reusable-snippets"
-  >
-    Write once and reuse across your docs.
-  </Card>
-</Columns>
-
-## Need inspiration?
-
-<Card
-  title="See complete examples"
-  icon="stars"
-  href="https://mintlify.com/customers"
->
-  Browse our showcase of exceptional documentation sites.
-</Card>
